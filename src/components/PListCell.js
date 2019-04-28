@@ -13,6 +13,7 @@ import {
   Image,
   TouchableOpacity 
 } from 'react-native';
+import moment from 'moment';
 import PTag from './PTag';
 
 class PListCell extends Component {
@@ -25,12 +26,17 @@ class PListCell extends Component {
     console.log(new Error('onPress not overriden'));
   }
 
+  formatDate(date) {
+    // TODO: Today, Yesterday, 01/04/12 -- date types
+    return moment(date).fromNow()
+  }
+
   renderDetailsForType() {
     if (this.props.type === 'transaction') {
       return (
         <View style={styles.details}>
           <Text style={styles.title}>Whole Foods</Text>
-          <Text style={styles.subtitle}>San Jose, CA • Yesterday</Text>
+          <Text style={styles.subtitle}>San Jose, CA • { this.formatDate(Date.now()) }</Text>
           <Text style={styles.amountSpent}>$33.75 Spent</Text>
         </View>
       );
