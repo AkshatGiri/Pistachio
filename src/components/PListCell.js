@@ -3,6 +3,7 @@ import {
   GREY_TEXT,
   LIST_CELL_BG_COLOR,
   SHADOW_COLOR,
+  RED
 } from '../utils/theme';
 import React, { Component } from 'react';
 import { 
@@ -12,6 +13,7 @@ import {
   Image,
   TouchableOpacity 
 } from 'react-native';
+import moment from 'moment';
 import PTag from './PTag';
 
 class PListCell extends Component {
@@ -24,16 +26,21 @@ class PListCell extends Component {
     console.log(new Error('onPress not overriden'));
   }
 
+  formatDate(date) {
+    // TODO: Today, Yesterday, 01/04/12 -- date types
+    return moment(date).fromNow()
+  }
+
   renderDetailsForType() {
     if (this.props.type === 'transaction') {
       return (
         <View style={styles.details}>
           <Text style={styles.title}>Whole Foods</Text>
-          <Text style={styles.subtitle}>San Jose, CA • Yesterday</Text>
+          <Text style={styles.subtitle}>San Jose, CA • { this.formatDate(Date.now()) }</Text>
           <Text style={styles.amountSpent}>$33.75 Spent</Text>
         </View>
       );
-    } else {
+    } else if (this.props.type === 'contribution'){
       return (
         <View style={styles.details}>
           <Text style={styles.title}>Whole Foods</Text>
@@ -42,21 +49,35 @@ class PListCell extends Component {
           </View>
         </View>
       );
+    } else {
+      throw new Error(`Invalid PListCell Type '${this.props.type}'`);
     }
+  }
+
+  renderContributionForType() {
+    return (
+      <Text style={[styles.amountContributed, { 
+        color: this.props.type === 'transaction' ?
+                RED : DARK_TEXT }]}>
+                { this.props.type === 'transaction' ? 
+                  '-' : '+' }$0.25</Text>
+    );
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <Image
-          style={styles.icon}
-        />
-        { this.renderDetailsForType() }
-        <View style={styles.moreDetails}>
-          <Text style={styles.amountSpent} />
-          <Image style={styles.chevron} />
+      <TouchableOpacity onPress={this.onPress.bind(this)}>
+        <View style={styles.container}>
+          <Image
+            style={styles.icon}
+          />
+          { this.renderDetailsForType() }
+          <View style={styles.moreDetails}>
+            { this.renderContributionForType() }
+            <Image source={require('../assets/images/grey-chevron.png')} />
+          </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -76,7 +97,8 @@ const styles = StyleSheet.create({
       height: 8
     },
     shadowOpacity: 0.2,
-    shadowRadius: 30
+    shadowRadius: 30,
+    marginBottom: 14
   },
   details: {
     flexDirection: 'column',
@@ -90,7 +112,11 @@ const styles = StyleSheet.create({
     marginRight: 14
   },
   moreDetails: {
-    //
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    alignSelf: 'flex-start',
+    flex: 1
   },
   title: {
     color: DARK_TEXT,
@@ -108,10 +134,10 @@ const styles = StyleSheet.create({
     fontSize: 10
   },
   amountContributed: {
-    //
-  },
-  chevron: {
-    //
+    color: RED,
+    fontFamily: 'CircularStd-Black',
+    fontSize: 17,
+    marginRight: 5
   }
 });
 
