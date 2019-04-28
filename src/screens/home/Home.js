@@ -10,9 +10,12 @@ import PText from "../../components/PText";
 import PTextButton from "../../components/PTextButton";
 import React from "react";
 import Row from "../../components/Row";
+import Store from "../../undux/store";
 import { logo } from "../../assets/images";
 
 const Home = props => {
+  let store = Store.useStore();
+  console.log(store.get("contributions"));
   return (
     <Container style={{ alignItems: "center" }}>
       <SafeAreaView>
