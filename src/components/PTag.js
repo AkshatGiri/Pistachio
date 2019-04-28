@@ -12,8 +12,8 @@ import {
 class PTag extends Component {
   render() {
     return (
-      <View style={{...styles.container, backgroundColor: this.props.bg || DARK_TEXT}}>
-        <Text style={{...styles.text, color: this.props.color || WHITE}}>{this.props.children}</Text>
+      <View style={{...styles.container, ...this.props.style, backgroundColor: this.props.bg || DARK_TEXT}}>
+        <Text style={{...styles.text, ...this.props.styleText, color: this.props.color || WHITE}}>{this.props.children}</Text>
       </View>
     );
   }
