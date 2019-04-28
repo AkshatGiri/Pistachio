@@ -2,45 +2,27 @@ import {
   DARK_TEXT,
   GREY_TEXT,
   LIST_CELL_BG_COLOR,
+  RED,
   SHADOW_COLOR,
-  RED
-} from '../utils/theme';
-import React, { Component } from 'react';
-import { 
-  StyleSheet, 
-  View,
-  Text, 
-  Image,
-  TouchableOpacity 
-} from 'react-native';
-import moment from 'moment';
-import PTag from './PTag';
+} from "../utils/theme";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React, { Component } from "react";
+
+import PTag from "./PTag";
+import moment from "moment";
 
 class PListCell extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}; // might not need state
-  }
-
   onPress() {
-    console.log(new Error('onPress not overriden'));
+    console.log(new Error("onPress not overriden"));
   }
 
   formatDate(date) {
     // TODO: Today, Yesterday, 01/04/12 -- date types
-    return moment(date).fromNow()
+    return moment(date).fromNow();
   }
 
   renderDetailsForType() {
-    if (this.props.type === 'transaction') {
-      return (
-        <View style={styles.details}>
-          <Text style={styles.title}>Whole Foods</Text>
-          <Text style={styles.subtitle}>San Jose, CA • { this.formatDate(Date.now()) }</Text>
-          <Text style={styles.amountSpent}>$33.75 Spent</Text>
-        </View>
-      );
-    } else if (this.props.type === 'contribution'){
+    if (this.props.type === "contribution") {
       return (
         <View style={styles.details}>
           <Text style={styles.title}>Whole Foods</Text>
@@ -50,17 +32,30 @@ class PListCell extends Component {
         </View>
       );
     } else {
-      throw new Error(`Invalid PListCell Type '${this.props.type}'`);
+      return (
+        <View style={styles.details}>
+          <Text style={styles.title}>Whole Foods</Text>
+          <Text style={styles.subtitle}>
+            San Jose, CA • {this.formatDate(Date.now())}
+          </Text>
+          <Text style={styles.amountSpent}>$33.75 Spent</Text>
+        </View>
+      );
     }
   }
 
   renderContributionForType() {
     return (
-      <Text style={[styles.amountContributed, { 
-        color: this.props.type === 'transaction' ?
-                RED : DARK_TEXT }]}>
-                { this.props.type === 'transaction' ? 
-                  '-' : '+' }$0.25</Text>
+      <Text
+        style={[
+          styles.amountContributed,
+          {
+            color: this.props.type === "transaction" ? RED : DARK_TEXT,
+          },
+        ]}
+      >
+        {this.props.type === "transaction" ? "-" : "+"}$0.25
+      </Text>
     );
   }
 
@@ -68,13 +63,11 @@ class PListCell extends Component {
     return (
       <TouchableOpacity onPress={this.onPress.bind(this)}>
         <View style={styles.container}>
-          <Image
-            style={styles.icon}
-          />
-          { this.renderDetailsForType() }
+          <Image style={styles.icon} />
+          {this.renderDetailsForType()}
           <View style={styles.moreDetails}>
-            { this.renderContributionForType() }
-            <Image source={require('../assets/images/grey-chevron.png')} />
+            {this.renderContributionForType()}
+            <Image source={require("../assets/images/grey-chevron.png")} />
           </View>
         </View>
       </TouchableOpacity>
@@ -90,55 +83,55 @@ const styles = StyleSheet.create({
     paddingRight: 14,
     paddingTop: 14,
     paddingBottom: 14,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     shadowOffset: {
       width: 0,
-      height: 8
+      height: 8,
     },
     shadowOpacity: 0.2,
     shadowRadius: 30,
-    marginBottom: 14
+    marginBottom: 14,
   },
   details: {
-    flexDirection: 'column',
-    justifyContent: 'center'
+    flexDirection: "column",
+    justifyContent: "center",
   },
   icon: {
     height: 53,
     width: 53,
     backgroundColor: GREY_TEXT,
     borderRadius: 13,
-    marginRight: 14
+    marginRight: 14,
   },
   moreDetails: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    alignSelf: 'flex-start',
-    flex: 1
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    alignSelf: "flex-start",
+    flex: 1,
   },
   title: {
     color: DARK_TEXT,
-    fontFamily: 'CircularStd-Black',
-    fontSize: 17
+    fontFamily: "CircularStd-Black",
+    fontSize: 17,
   },
   subtitle: {
     color: GREY_TEXT,
-    fontFamily: 'CircularStd-Bold',
-    fontSize: 9
+    fontFamily: "CircularStd-Bold",
+    fontSize: 9,
   },
   amountSpent: {
     color: DARK_TEXT,
-    fontFamily: 'CircularStd-Black',
-    fontSize: 10
+    fontFamily: "CircularStd-Black",
+    fontSize: 10,
   },
   amountContributed: {
     color: RED,
-    fontFamily: 'CircularStd-Black',
+    fontFamily: "CircularStd-Black",
     fontSize: 17,
-    marginRight: 5
-  }
+    marginRight: 5,
+  },
 });
 
 module.exports = PListCell;
