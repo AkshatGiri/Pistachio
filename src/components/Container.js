@@ -10,7 +10,6 @@ const Container = ({ children }) => {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    paddingHorizontal: 10,
     flex: 1,
     alignSelf: "center",
     backgroundColor: BACKGROUND,
