@@ -1,6 +1,10 @@
 import Container from "../../components/Container";
 import PButton from "../../components/PButton";
 import PText from "../../components/PText";
+import PBackground from '../../components/PBackground';
+import PListSection from '../../components/PListSection';
+import PListCell from '../../components/PListCell';
+
 import React from "react";
 import { createStackNavigator } from "react-navigation";
 
@@ -15,7 +19,11 @@ const Dev = () => {
       <PText bold>Bold</PText>
       <PText italic>italic</PText>
       <PText color="grey">Greyed</PText>
-
+      <PBackground>
+        <PListSection>
+          <PListCell type={'transaction'} />
+        </PListSection>
+      </PBackground>
       <PButton title="PButton" />
     </Container>
   );
