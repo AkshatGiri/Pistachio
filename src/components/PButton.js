@@ -5,16 +5,16 @@ import {
 } from "../utils/theme";
 import { Text, TouchableOpacity } from "react-native";
 
+import PText from "./PText";
 import React from "react";
 
 const PButton = ({
   title,
-  subTitle,
   onPress,
   buttonStyle,
   titleStyle,
-  subTitleStyle,
   disabled,
+  bold,
 }) => {
   const styles = {
     button: {
@@ -36,7 +36,6 @@ const PButton = ({
       alignSelf: "center",
       color: BUTTON_TEXT_COLOR,
       padding: 3,
-      fontSize: 20,
     },
     subTitle: {
       alignSelf: "center",
@@ -50,10 +49,9 @@ const PButton = ({
       style={[styles.button, buttonStyle]}
       disabled={disabled}
     >
-      <Text style={[styles.title, titleStyle]}>{title}</Text>
-      {subTitle != null && (
-        <Text style={[styles.subTitle, subTitleStyle]}>{subTitle}</Text>
-      )}
+      <PText style={[styles.title, titleStyle]} bold={bold}>
+        {title}
+      </PText>
     </TouchableOpacity>
   );
 };

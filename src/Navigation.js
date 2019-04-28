@@ -7,9 +7,16 @@ import {
 
 import Dev from "./screens/dev/Dev";
 import Home from "./screens/home/Home";
+import Initial from "./screens/initial/Initial";
 import Skeletor from "./components/Skeletor";
 
 const HomeNavigator = createStackNavigator({
+  Initial: {
+    screen: Initial,
+    navigationOptions: {
+      header: null,
+    },
+  },
   Home: {
     screen: Home,
     // we don't need a header for this page.
@@ -19,7 +26,6 @@ const HomeNavigator = createStackNavigator({
   },
   Contributions: {
     screen: Skeletor,
-
     navigationOptions: {
       title: "Contributions",
     },
