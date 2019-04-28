@@ -13,3 +13,5 @@ export const DARK_TEXT = BLACK;
 export const GREY_TEXT = LIGHT_GREY;
 
 export const BUTTON_BG_COLOR = BRIGHT_GREEN;
+
+export const TABLET_BG_COLOR = BRIGHT_GREEN;
