@@ -4,6 +4,7 @@ import {
   LIGHT_GREY,
   LIGHT_TEXT,
   WHITE,
+  TABLET_BG_COLOR
 } from "../utils/theme";
 
 import PropTypes from "prop-types";
@@ -49,6 +50,9 @@ const PText = ({
     case "dark":
       fontStyle.color = DARK_TEXT;
       break;
+    case "accent":
+      fontStyle.color = TABLET_BG_COLOR;
+      break;
     case "grey":
       fontStyle.color = GREY_TEXT;
       break;
@@ -68,7 +72,7 @@ PText.propTypes = {
   size: PropTypes.oneOf(["xs", "s", "m", "l", "xl"]),
   bold: PropTypes.bool,
   italic: PropTypes.bool,
-  color: PropTypes.oneOf(["light", "dark", "grey"]),
+  color: PropTypes.oneOf(["light", "dark", "grey", "accent"]),
   fontWeight: PropTypes.string,
 };
 

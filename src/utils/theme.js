@@ -16,6 +16,8 @@ export const GREY_TEXT = LIGHT_GREY;
 export const SHADOW_COLOR = BLACK;
 
 export const BUTTON_BG_COLOR = BRIGHT_GREEN;
+
+export const TABLET_BG_COLOR = BRIGHT_GREEN;
 export const LIST_CELL_BG_COLOR = WHITE;
 
 export const LIGHT_BG_GRAD_TOP = '#F9F9F9';

@@ -7,10 +7,6 @@ import { createStackNavigator } from "react-navigation";
 const Home = props => {
   return (
     <Container>
-      <PText>Test</PText>
-      <PText>Test</PText>
-      <PText>Test</PText>
-      <PText>Test</PText>
       <PButton
         title="Go To Contributions"
         onPress={() => props.navigation.navigate("Contributions")}
