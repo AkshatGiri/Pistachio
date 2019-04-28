@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, StatusBar } from "react";
 
 import Navigation from "./src/Navigation";
 

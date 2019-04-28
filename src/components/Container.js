@@ -1,16 +1,19 @@
-import { StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 
 import { BACKGROUND } from "../utils/theme";
 import React from "react";
 
-const Container = ({ children }) => {
-  return <View style={styles.container}>{children}</View>;
+const Container = ({ children, style, ...props }) => {
+  return (
+    <SafeAreaView style={[styles.container, style]} {...props}>
+      {children}
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    paddingHorizontal: 10,
     flex: 1,
     alignSelf: "center",
     backgroundColor: BACKGROUND,

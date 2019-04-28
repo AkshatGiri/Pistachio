@@ -1,6 +1,10 @@
 import Container from "../../components/Container";
 import PButton from "../../components/PButton";
 import PText from "../../components/PText";
+import PBackground from '../../components/PBackground';
+import PListSection from '../../components/PListSection';
+import PListCell from '../../components/PListCell';
+
 import React from "react";
 import { createStackNavigator } from "react-navigation";
 
@@ -15,7 +19,11 @@ const Dev = () => {
       <PText bold>Bold</PText>
       <PText italic>italic</PText>
       <PText color="grey">Greyed</PText>
-
+      <PBackground>
+        <PListSection>
+          <PListCell type={'transaction'} />
+        </PListSection>
+      </PBackground>
       <PButton title="PButton" />
     </Container>
   );
@@ -31,3 +39,24 @@ const DevNavigator = createStackNavigator({
 });
 
 export default DevNavigator;
+
+const x = {
+  all_contributions: [
+    {
+      org_name: "Homeless Shelter",
+      org_image: "image url",
+      org_description: "Description about the org",
+      contribution_amount: 0.75,
+      categories: ["Rent", "Food Suplies"],
+      money_spent_on: [
+        { item_name: "Water Bottles", item_image: "image url" },
+        { item_name: "Rent", item_image: "image url" },
+      ],
+    },
+  ],
+  top_charities: [
+    { org_name: "Unicef", org_image: "image url" },
+    { org_name: "Unicef", org_image: "image ulr" },
+    { org_name: "Unicef", org_image: "image url" },
+  ],
+};
