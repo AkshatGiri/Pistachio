@@ -10,7 +10,9 @@ const Item = props => {
     <View style={styles.item}>
       <PTag styleText={{fontSize: 15}} style={{position: 'absolute', zIndex: 1, right: 10, top: 15}}>{props.price}</PTag>
       <Image resizeMode="contain" style={styles.image} source={{ uri: props.image }} />
-      <PText color="dark" bold size="sx">{props.name}</PText>
+      <View style={styles.textContainer}>
+        <PText color="dark" bold size="sx">{props.name}</PText>
+      </View>
     </View>
   );
 };
@@ -22,15 +24,23 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: "white",
     marginVertical: 10,
-    padding: 18,
-    justifyContent: 'center',
-    alignItems: 'flex-start'
+    padding: 10,
+    flexDirection: 'column',
+    alignItems: 'center'
+    //justifyContent: 'space-around'
+  },
+  textContainer: {
+    alignSelf: 'flex-start',
+    flex: 1,
+    marginHorizontal: 5
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 80,
     alignSelf: 'center',
-    marginBottom: 10
+    marginVertical: 16
+    // justifyContent: 'space-between'
+    // marginBottom: 30
   }
 });
 

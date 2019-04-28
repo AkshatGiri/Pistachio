@@ -9,6 +9,8 @@ import React from "react";
 import Row from "../../components/Row";
 import { View } from "react-native";
 import { WHITE } from "../../utils/theme";
+import * as Images from "../../assets/images";
+
 const TransactionDetail = props => {
   return (
     <Container style={{ padding: 10 }}>
@@ -28,10 +30,10 @@ const TransactionDetail = props => {
       />
       <PText bold>Transaction</PText>
       <Margin margin={10} />
-      <PListCell type="transaction" />
+      <PListCell image={Images.wholefoods} price="0.23" title="Whole Foods" type="transaction" />
       <PText bold>Contribution</PText>
       <Margin margin={10} />
-      <PListCell type="contribution" />
+      <PListCell image={Images.redcross} title="Red Cross" price="0.19" type="contribution" />
     </Container>
   );
 };

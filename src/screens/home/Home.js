@@ -11,7 +11,8 @@ import PTextButton from "../../components/PTextButton";
 import React from "react";
 import Row from "../../components/Row";
 import Store from "../../undux/store";
-import { logo } from "../../assets/images";
+import * as Images from "../../assets/images";
+
 
 const Home = props => {
   let store = Store.useStore();
@@ -19,11 +20,11 @@ const Home = props => {
   return (
     <Container style={{ alignItems: "center" }}>
       <SafeAreaView>
-        <Image source={logo} style={{ height: 33 }} resizeMode="contain" />
+        <Image source={Images.logo} style={{ height: 33 }} resizeMode="contain" />
       </SafeAreaView>
       <Margin margin={10} />
       <PText color="accent" size="xl" bold style={{ fontSize: 70 }}>
-        $3,000
+        $23.17
       </PText>
       <PText bold size="s">
         Donated to 5 charities
@@ -66,8 +67,8 @@ const Home = props => {
         </Row>
         <Margin margin={15} />
 
-        <PListCell type="transaction" />
-        <PListCell type="transaction" />
+        <PListCell image={Images.wholefoods} price="0.99" navigation={props.navigation} title="Whole Foods" type="transaction" />
+        <PListCell image={Images.starbucks} price="0.45" navigation={props.navigation} title="Starbucks" type="transaction" />
 
         {/* RECENT CONTRIBUTIONS */}
         <Row
@@ -91,8 +92,8 @@ const Home = props => {
         </Row>
         <Margin margin={15} />
 
-        <PListCell type="contribution" />
-        <PListCell type="contribution" />
+        <PListCell image={Images.cityTeam} price="0.10" navigation={props.navigation} title="City Team" type="contribution" />
+        <PListCell image={Images.salvationarmy} price="0.67" navigation={props.navigation} title="Salvation Army" type="contribution" />
       </ScrollView>
     </Container>
   );

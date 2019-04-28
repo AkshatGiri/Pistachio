@@ -1,2 +1,13 @@
 export const logo = require("./logo.png");
 export const onboardingGirlImage = require("./onboarding-girl.png");
+export const americares = require("./charities/americares.png");
+export const cityTeam = require("./charities/cityTeam.jpg");
+export const FeedingAmerica = require("./charities/Feeding-America.jpg");
+export const habitat = require("./charities/habitat.jpg");
+export const lifemoves = require("./charities/lifemoves.png");
+export const redcross = require("./charities/redcross.png");
+export const salvationarmy = require("./charities/salvationarmy.png");
+export const starbucks = require("./charities/starbucks.png");
+export const unicef = require("./charities/unicef.png");
+export const unitedway = require("./charities/unitedway.png");
+export const wholefoods = require("./charities/wholefoods.jpg");

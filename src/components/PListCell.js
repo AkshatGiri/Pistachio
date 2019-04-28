@@ -26,16 +26,18 @@ class PListCell extends Component {
     if (this.props.type === "contribution") {
       return (
         <View style={styles.details}>
-          <Text style={styles.title}>Whole Foods</Text>
+          <Text style={styles.title}>{this.props.title}</Text>
           <View style={styles.tagContainer}>
-            <PTag>Food</PTag>
+
+            <PTag>{"Supplies"}</PTag>
+
           </View>
         </View>
       );
     } else {
       return (
         <View style={styles.details}>
-          <Text style={styles.title}>Whole Foods</Text>
+          <Text style={styles.title}>{this.props.title}</Text>
           <Text style={styles.subtitle}>
             San Jose, CA • {this.formatDate(Date.now())}
           </Text>
@@ -55,7 +57,7 @@ class PListCell extends Component {
           },
         ]}
       >
-        {this.props.type === "transaction" ? "-" : "+"}$0.25
+        {this.props.type === "transaction" ? "-" : "+"}${this.props.price}
       </Text>
     );
   }
@@ -64,7 +66,7 @@ class PListCell extends Component {
     return (
       <TouchableOpacity onPress={this.onPress.bind(this)}>
         <View style={styles.container}>
-          <Image style={styles.icon} />
+          <Image resizeMode="contain" source={this.props.image} style={styles.icon} />
           {this.renderDetailsForType()}
           <View style={styles.moreDetails}>
             {this.renderContributionForType()}
@@ -101,8 +103,8 @@ const styles = StyleSheet.create({
   icon: {
     height: 53,
     width: 53,
-    backgroundColor: GREY_TEXT,
-    borderRadius: 13,
+    // backgroundColor: GREY_TEXT,
+    // borderRadius: 13,
     marginRight: 14,
   },
   moreDetails: {
@@ -116,6 +118,7 @@ const styles = StyleSheet.create({
     color: DARK_TEXT,
     fontFamily: "CircularStd-Black",
     fontSize: 17,
+    marginBottom: 5
   },
   subtitle: {
     color: GREY_TEXT,
@@ -133,6 +136,10 @@ const styles = StyleSheet.create({
     fontSize: 17,
     marginRight: 5,
   },
+  image: {
+    width: 10,
+    height: 10
+  }
 });
 
 export default PListCell;
