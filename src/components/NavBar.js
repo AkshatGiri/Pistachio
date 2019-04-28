@@ -8,7 +8,7 @@ import Row from "./Row";
 
 const NavBar = props => {
   return (
-    <SafeAreaView style={styles.cartContainer}>
+    <SafeAreaView style={{ width: "100%" }}>
       <Row style={{ justifyContent: "space-between" }}>
         <View style={{ flex: 1 }}>
           <BackButton navigation={props.navigation} cross />
@@ -20,7 +20,7 @@ const NavBar = props => {
             alignItems: "center",
           }}
         >
-          <PText>{props.title}</PText>
+          <PText bold>{props.title}</PText>
         </View>
         <View style={{ flex: 1 }} />
       </Row>

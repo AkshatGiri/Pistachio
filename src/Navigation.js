@@ -5,6 +5,7 @@ import {
   createSwitchNavigator,
 } from "react-navigation";
 
+import ContributionDetail from "./screens/contributionDetail/ContributionDetail";
 import Contributions from "./screens/contributions/Contributions";
 import Dev from "./screens/dev/Dev";
 import Home from "./screens/home/Home";
@@ -32,7 +33,7 @@ const HomeNavigator = createStackNavigator({
   Contributions: {
     screen: Contributions,
     navigationOptions: {
-      title: "Contributions",
+      header: null,
     },
   },
   Transactions: {
@@ -43,6 +44,12 @@ const HomeNavigator = createStackNavigator({
   },
   TransactionDetail: {
     screen: TransactionDetail,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  ContributionDetail: {
+    screen: ContributionDetail,
     navigationOptions: {
       header: null,
     },

@@ -14,6 +14,7 @@ import moment from "moment";
 class PListCell extends Component {
   onPress() {
     console.log(new Error("onPress not overriden"));
+    this.props.navigation.navigate('ContributionDetail');
   }
 
   formatDate(date) {

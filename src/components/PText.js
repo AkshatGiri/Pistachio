@@ -29,8 +29,14 @@ const PText = ({
     case "s":
       fontStyle.fontSize = 16;
       break;
+    case "sm":
+      fontStyle.fontSize = 18;
+      break;
     case "m":
       fontStyle.fontSize = 20;
+      break;
+    case "ml":
+      fontStyle.fontSize = 25;
       break;
     case "l":
       fontStyle.fontSize = 30;
@@ -69,7 +75,7 @@ const PText = ({
 };
 
 PText.propTypes = {
-  size: PropTypes.oneOf(["xs", "s", "m", "l", "xl"]),
+  size: PropTypes.oneOf(["xs", "s","sm", "m", "l", "xl", "ml"]),
   bold: PropTypes.bool,
   italic: PropTypes.bool,
   color: PropTypes.oneOf(["light", "dark", "grey", "accent"]),
