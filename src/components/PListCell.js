@@ -97,7 +97,8 @@ const styles = StyleSheet.create({
       height: 8
     },
     shadowOpacity: 0.2,
-    shadowRadius: 30
+    shadowRadius: 30,
+    marginBottom: 14
   },
   details: {
     flexDirection: 'column',
