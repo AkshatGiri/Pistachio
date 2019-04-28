@@ -8,6 +8,10 @@ import PText from "../../components/PText";
 import React from "react";
 import { View } from "react-native";
 
+let GOTO_SCREEN;
+GOTO_SCREEN = "Plaid";
+GOTO_SCREEN = "Home";
+
 const Initial = ({ navigation }) => {
   return (
     <Container style={{ alignItems: "center", justifyContent: "center" }}>
@@ -17,6 +21,7 @@ const Initial = ({ navigation }) => {
         <PText style={{ fontSize: 27 }}>The new way to</PText>
         <PText style={{ fontSize: 27 }}>give back</PText>
       </View>
+
       <Margin />
 
       <Image source={onboardingGirlImage} />
@@ -24,7 +29,7 @@ const Initial = ({ navigation }) => {
 
       <PButton
         title="Get Started   >"
-        onPress={() => navigation.navigate("Home")}
+        onPress={() => navigation.navigate(GOTO_SCREEN)}
         buttonStyle={{ width: "50%" }}
         bold
       />

@@ -11,6 +11,7 @@ import Dev from "./screens/dev/Dev";
 import Home from "./screens/home/Home";
 import Initial from "./screens/initial/Initial";
 import PText from "./components/PText";
+import Plaid from "./screens/plaid/Plaid";
 import React from "react";
 import Skeletor from "./components/Skeletor";
 import TransactionDetail from "./screens/transactionDetail/TransactionDetail";
@@ -26,6 +27,12 @@ const HomeNavigator = createStackNavigator({
   Home: {
     screen: Home,
     // we don't need a header for this page.
+    navigationOptions: {
+      header: null,
+    },
+  },
+  Plaid: {
+    screen: Plaid,
     navigationOptions: {
       header: null,
     },
