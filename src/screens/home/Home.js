@@ -19,13 +19,4 @@ const Home = props => {
   );
 };
 
-const DevNavigator = createStackNavigator({
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      header: null,
-    },
-  },
-});
-
-export default DevNavigator;
+export default Home;
