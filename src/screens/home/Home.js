@@ -12,8 +12,8 @@ const Home = props => {
       <PText>Test</PText>
       <PText>Test</PText>
       <PButton
-        title="Go To Dev"
-        onPress={() => props.navigation.navigate("DevScreen")}
+        title="Go To Contributions"
+        onPress={() => props.navigation.navigate("Contributions")}
       />
     </Container>
   );

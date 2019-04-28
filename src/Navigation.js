@@ -12,8 +12,16 @@ import Skeletor from "./components/Skeletor";
 const HomeNavigator = createStackNavigator({
   Home: {
     screen: Home,
+    // we don't need a header for this page.
     navigationOptions: {
       header: null,
+    },
+  },
+  Contributions: {
+    screen: Skeletor,
+
+    navigationOptions: {
+      title: "Contributions",
     },
   },
 });
