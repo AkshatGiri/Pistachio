@@ -22,17 +22,7 @@ class PListCell extends Component {
   }
 
   renderDetailsForType() {
-    if (this.props.type === "transaction") {
-      return (
-        <View style={styles.details}>
-          <Text style={styles.title}>Whole Foods</Text>
-          <Text style={styles.subtitle}>
-            San Jose, CA • {this.formatDate(Date.now())}
-          </Text>
-          <Text style={styles.amountSpent}>$33.75 Spent</Text>
-        </View>
-      );
-    } else if (this.props.type === "contribution") {
+    if (this.props.type === "contribution") {
       return (
         <View style={styles.details}>
           <Text style={styles.title}>Whole Foods</Text>
@@ -42,7 +32,15 @@ class PListCell extends Component {
         </View>
       );
     } else {
-      throw new Error(`Invalid PListCell Type '${this.props.type}'`);
+      return (
+        <View style={styles.details}>
+          <Text style={styles.title}>Whole Foods</Text>
+          <Text style={styles.subtitle}>
+            San Jose, CA • {this.formatDate(Date.now())}
+          </Text>
+          <Text style={styles.amountSpent}>$33.75 Spent</Text>
+        </View>
+      );
     }
   }
 

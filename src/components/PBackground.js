@@ -8,7 +8,7 @@ import LinearGradient from 'react-native-linear-gradient';
 class PBackground extends Component {
   render() {
     return (
-      <LinearGradient colors={[LIGHT_BG_GRAD_TOP, LIGHT_BG_GRAD_BOT]}>
+      <LinearGradient {...this.props} colors={[LIGHT_BG_GRAD_TOP, LIGHT_BG_GRAD_BOT]}>
         {this.props.children}
       </LinearGradient>
     );
