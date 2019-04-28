@@ -76,7 +76,13 @@ const Home = props => {
           <PText color="dark" bold>
             Recent Contributions
           </PText>
-          <PTextButton title="See all >" fontSize={13} bold color={LIGHT_GREY}>
+          <PTextButton
+            title="See all >"
+            fontSize={13}
+            bold
+            color={LIGHT_GREY}
+            onPress={() => props.navigation.navigate("Contributions")}
+          >
             See all >
           </PTextButton>
         </Row>
