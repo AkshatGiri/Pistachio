@@ -3,8 +3,8 @@ import {
   WHITE
 } from '../utils/theme';
 import React, { Component } from 'react';
-import { 
-  StyleSheet, 
+import {
+  StyleSheet,
   View,
   Text
 } from 'react-native';
@@ -12,8 +12,8 @@ import {
 class PTag extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>{this.props.children}</Text>
+      <View style={{...styles.container, backgroundColor: this.props.bg || DARK_TEXT}}>
+        <Text style={{...styles.text, color: this.props.color || WHITE}}>{this.props.children}</Text>
       </View>
     );
   }
@@ -22,14 +22,14 @@ class PTag extends Component {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 80,
-    backgroundColor: DARK_TEXT,
+    // backgroundColor: bg,
     paddingVertical: 4,
     paddingHorizontal: 7,
-    marginRight: 10,
+    marginRight: 5,
     alignSelf: 'flex-start'
   },
   text: {
-    color: WHITE,
+    // color,
     fontFamily: 'CircularStd-Bold',
     fontSize: 8
   }

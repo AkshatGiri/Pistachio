@@ -8,6 +8,7 @@ import {
 import Dev from "./screens/dev/Dev";
 import Home from "./screens/home/Home";
 import Contributions from "./screens/contributions/Contributions";
+import ContributionDetail from "./screens/contributionDetail/ContributionDetail";
 import Initial from "./screens/initial/Initial";
 import Skeletor from "./components/Skeletor";
 
@@ -27,6 +28,13 @@ const HomeNavigator = createStackNavigator({
   },
   Contributions: {
     screen: Contributions,
+
+    navigationOptions: {
+      title: "Contributions",
+    },
+  },
+  ContributionDetail: {
+    screen: ContributionDetail,
 
     navigationOptions: {
       title: "Contributions",
