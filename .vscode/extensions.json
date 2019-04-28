@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "amatiasq.sort-imports",
+    "cbrevik.toggle-format-on-save",
+    "emmanuelbeziat.vscode-great-icons"
+  ]
+}
