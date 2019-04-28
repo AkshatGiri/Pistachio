@@ -36,15 +36,19 @@ const Contributions = () => {
 				</View>
 			</View>
 			<PBackground>
-        <PListSection>
-          <PListCell type={'transaction'} />
+				<PListSection>
 					<PListCell type={'transaction'} />
 					<PListCell type={'transaction'} />
 					<PListCell type={'transaction'} />
 					<PListCell type={'transaction'} />
 					<PListCell type={'transaction'} />
-        </PListSection>
-      </PBackground>
+					<PListCell type={'transaction'} />
+					<PListCell type={'transaction'} />
+					<PListCell type={'transaction'} />
+					<PListCell type={'transaction'} />
+					<PListCell type={'transaction'} />
+				</PListSection>
+			</PBackground>
 		</Container>
 	);
 };
