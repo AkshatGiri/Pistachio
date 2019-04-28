@@ -53,10 +53,11 @@ const Home = props => {
             See all >
           </PText>
         </Row>
-        <PListCell />
-        <PListCell />
-        <PListCell />
-        <PListCell />
+        <Margin margin={15} />
+
+        <PListCell type="transaction" />
+        <PListCell type="transaction" />
+
         {/* RECENT CONTRIBUTIONS */}
         <Row
           style={{
@@ -71,6 +72,10 @@ const Home = props => {
             See all >
           </PText>
         </Row>
+        <Margin margin={15} />
+
+        <PListCell type="contribution" />
+        <PListCell type="contribution" />
       </ScrollView>
     </Container>
   );

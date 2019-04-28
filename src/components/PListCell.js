@@ -12,11 +12,6 @@ import PTag from "./PTag";
 import moment from "moment";
 
 class PListCell extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}; // might not need state
-  }
-
   onPress() {
     console.log(new Error("onPress not overriden"));
   }
@@ -141,4 +136,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PListCell;
+module.exports = PListCell;
