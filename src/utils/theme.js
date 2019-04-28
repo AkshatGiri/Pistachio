@@ -3,6 +3,7 @@ export const BLACK = "black";
 export const DARK_BLUE = "#161838";
 export const BRIGHT_GREEN = "#1DFFE4";
 export const LIGHT_GREY = "#D3D3D3";
+export const RED = '#FF1079';
 
 export const PRIMARY = BRIGHT_GREEN;
 

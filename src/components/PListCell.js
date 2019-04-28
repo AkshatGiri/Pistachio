@@ -3,6 +3,7 @@ import {
   GREY_TEXT,
   LIST_CELL_BG_COLOR,
   SHADOW_COLOR,
+  RED
 } from '../utils/theme';
 import React, { Component } from 'react';
 import { 
@@ -47,16 +48,18 @@ class PListCell extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Image
-          style={styles.icon}
-        />
-        { this.renderDetailsForType() }
-        <View style={styles.moreDetails}>
-          <Text style={styles.amountSpent} />
-          <Image style={styles.chevron} />
+      <TouchableOpacity>
+        <View style={styles.container}>
+          <Image
+            style={styles.icon}
+          />
+          { this.renderDetailsForType() }
+          <View style={styles.moreDetails}>
+            <Text style={styles.amountContributed}>-$0.25</Text>
+            <Image source={require('../assets/images/grey-chevron.png')} />
+          </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -90,7 +93,11 @@ const styles = StyleSheet.create({
     marginRight: 14
   },
   moreDetails: {
-    //
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    alignSelf: 'flex-start',
+    flex: 1
   },
   title: {
     color: DARK_TEXT,
@@ -108,10 +115,10 @@ const styles = StyleSheet.create({
     fontSize: 10
   },
   amountContributed: {
-    //
-  },
-  chevron: {
-    //
+    color: RED,
+    fontFamily: 'CircularStd-Black',
+    fontSize: 17,
+    marginRight: 5
   }
 });
 
