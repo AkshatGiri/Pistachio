@@ -34,7 +34,7 @@ class PListCell extends Component {
           <Text style={styles.amountSpent}>$33.75 Spent</Text>
         </View>
       );
-    } else {
+    } else if (this.props.type === 'contribution'){
       return (
         <View style={styles.details}>
           <Text style={styles.title}>Whole Foods</Text>
@@ -43,19 +43,31 @@ class PListCell extends Component {
           </View>
         </View>
       );
+    } else {
+      throw new Error(`Invalid PListCell Type '${this.props.type}'`);
     }
+  }
+
+  renderContributionForType() {
+    return (
+      <Text style={[styles.amountContributed, { 
+        color: this.props.type === 'transaction' ?
+                RED : DARK_TEXT }]}>
+                { this.props.type === 'transaction' ? 
+                  '-' : '+' }$0.25</Text>
+    );
   }
 
   render() {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={this.onPress.bind(this)}>
         <View style={styles.container}>
           <Image
             style={styles.icon}
           />
           { this.renderDetailsForType() }
           <View style={styles.moreDetails}>
-            <Text style={styles.amountContributed}>-$0.25</Text>
+            { this.renderContributionForType() }
             <Image source={require('../assets/images/grey-chevron.png')} />
           </View>
         </View>
