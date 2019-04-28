@@ -7,6 +7,7 @@ import PTag from "../../components/PTag";
 import PText from "../../components/PText";
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
+import Item from './Item';
 
 const Home = props => {
   return (
@@ -56,15 +57,14 @@ const Home = props => {
               justifyContent: "space-between",
             }}
           >
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
-            <View style={styles.item} />
+            <Item name="Toilet Paper" price="$9.73" image={'https://png2.kisspng.com/sh/820701faf83952bd03283af8ffad1773/L0KzQYi4UsE6N6RBfJGAYUO8dIrsVsM3OGQ4T5CAOUW5RIq8VcE2OWQ8TKICN0S1QoK5Vsc0QV91htk=/5a39d9e6360337.59564955151374077422126739.png'}/>
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <Item />
           </View>
         </ScrollView>
       </View>
