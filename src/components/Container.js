@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     flex: 1,
     alignSelf: "center",
-    backgroundColor: BACKGROUND
-  }
+    backgroundColor: BACKGROUND,
+  },
 });
 
 export default Container;
