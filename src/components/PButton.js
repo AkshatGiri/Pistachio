@@ -15,6 +15,8 @@ const PButton = ({
   titleStyle,
   disabled,
   bold,
+  textColor,
+  textSize = "m",
 }) => {
   const styles = {
     button: {
@@ -49,7 +51,12 @@ const PButton = ({
       style={[styles.button, buttonStyle]}
       disabled={disabled}
     >
-      <PText style={[styles.title, titleStyle]} bold={bold}>
+      <PText
+        style={[styles.title, titleStyle]}
+        bold={bold}
+        size={textSize}
+        color={textColor}
+      >
         {title}
       </PText>
     </TouchableOpacity>

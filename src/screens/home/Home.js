@@ -2,10 +2,12 @@ import { SafeAreaView, ScrollView, View } from "react-native";
 
 import Container from "../../components/Container";
 import { Image } from "react-native";
+import { LIGHT_GREY } from "../../utils/theme";
 import Margin from "../../components/Margin";
 import PButton from "../../components/PButton";
 import PListCell from "../../components/PListCell";
 import PText from "../../components/PText";
+import PTextButton from "../../components/PTextButton";
 import React from "react";
 import Row from "../../components/Row";
 import { logo } from "../../assets/images";
@@ -49,9 +51,15 @@ const Home = props => {
           <PText color="dark" bold>
             Recent Transactions
           </PText>
-          <PText size="xs" bold color="grey">
+          <PTextButton
+            onPress={() => props.navigation.navigate("Transactions")}
+            title="See all >"
+            fontSize={13}
+            bold
+            color={LIGHT_GREY}
+          >
             See all >
-          </PText>
+          </PTextButton>
         </Row>
         <Margin margin={15} />
 
@@ -68,9 +76,9 @@ const Home = props => {
           <PText color="dark" bold>
             Recent Contributions
           </PText>
-          <PText size="xs" bold color="grey">
+          <PTextButton title="See all >" fontSize={13} bold color={LIGHT_GREY}>
             See all >
-          </PText>
+          </PTextButton>
         </Row>
         <Margin margin={15} />
 

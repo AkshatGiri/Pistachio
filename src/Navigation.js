@@ -5,11 +5,15 @@ import {
   createSwitchNavigator,
 } from "react-navigation";
 
+import Contributions from "./screens/contributions/Contributions";
 import Dev from "./screens/dev/Dev";
 import Home from "./screens/home/Home";
-import Contributions from "./screens/contributions/Contributions";
 import Initial from "./screens/initial/Initial";
+import PText from "./components/PText";
+import React from "react";
 import Skeletor from "./components/Skeletor";
+import TransactionDetail from "./screens/transactionDetail/TransactionDetail";
+import Transactions from "./screens/transactions/Transactions";
 
 const HomeNavigator = createStackNavigator({
   Initial: {
@@ -27,9 +31,20 @@ const HomeNavigator = createStackNavigator({
   },
   Contributions: {
     screen: Contributions,
-
     navigationOptions: {
       title: "Contributions",
+    },
+  },
+  Transactions: {
+    screen: Transactions,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  TransactionDetail: {
+    screen: TransactionDetail,
+    navigationOptions: {
+      header: null,
     },
   },
 });

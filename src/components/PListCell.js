@@ -134,4 +134,4 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = PListCell;
+export default PListCell;
